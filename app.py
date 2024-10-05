@@ -10,19 +10,20 @@ time_range = 3600
 
 max_msg = 5
 
+print(colored("Automated Whatsapp Test By A.I Instaraj",'green',['bold']))
+
 def respond(message):
     response = MessagingResponse()
     response.message(message)
     return str(response)
-
+    
 @app.route('/', methods=['POST'])
 def reply():
-    print(colored("Automated Whatsapp Test By A.I Instaraj",'green','on_blue',['bold', 'blink']))
     message = request.form.get('Body','')
     sender_id = request.form.get('From','')[9:]
     user = request.form.get('ProfileName', '')
     current_time = time.time()
-    print(colored(f"Message: {message}", 'green'))
+    print(colored(f"Message: {message} \n User: {user} ", 'green'))
     
     if message:
         if sender_id not in user_message_counts or (current_time - user_message_counts[sender_id]['timestamp'] > time_range):

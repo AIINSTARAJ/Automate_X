@@ -37,7 +37,7 @@ def send_msg_group():
 def send_msg_group_instant():
     msg = input("Enter Message: ")
     group_ = input("Enter Group Name: ")
-    pywhatkit.sendwhatmsg_to_group_instantly(group_,msg,hr,mins,wait,True,close)
+    pywhatkit.sendwhatmsg_to_group_instantly(group_,msg,wait,True,close)
 
 try:
     send_img()
